@@ -7,4 +7,10 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_splash">splash</string>
+    <string name="title_activity_educ">educ</string>
+    <string name="title_activity_games">games</string>
+    <string name="title_activity_informatica">informatica</string>
+    <string name="title_activity_educa">educaActivity</string>
+    <string name="title_activity_game">gameActivity</string>
+    <string name="title_activity_info">infoActivity</string>
 </resources>
