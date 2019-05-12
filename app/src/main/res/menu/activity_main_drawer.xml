@@ -15,7 +15,7 @@
         <item
             android:id="@+id/nav_soft"
             android:icon="@drawable/monitor"
-            android:title="Software/Hardware" />
+            android:title="Informática" />
     </group>
 
     <item android:title="Communicate">

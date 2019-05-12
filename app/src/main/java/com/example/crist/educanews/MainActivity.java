@@ -1,5 +1,6 @@
 package com.example.crist.educanews;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -72,11 +73,17 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_educ) {
-            // Handle the camera action
+            {
+               Intent educaActivity = new Intent(this, educaActivity.class);
+               startActivity(educaActivity);
+            }
         } else if (id == R.id.nav_game) {
+            Intent gameAcitvity = new Intent(this,gameActivity.class);
+            startActivity(gameAcitvity);
 
         } else if (id == R.id.nav_soft) {
-
+            Intent infoAcitvity = new Intent(this,infoActivity.class);
+            startActivity(infoAcitvity);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
