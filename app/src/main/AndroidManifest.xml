@@ -14,29 +14,29 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
+
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity
             android:name=".educaActivity"
-            android:label="@string/title_activity_educa"
+            android:label="Educação"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".gameActivity"
-            android:label="@string/title_activity_game"
+            android:label="Games"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".infoActivity"
-            android:label="@string/title_activity_info"
+            android:label="Informática"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
