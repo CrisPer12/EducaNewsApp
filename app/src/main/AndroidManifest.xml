@@ -6,7 +6,7 @@
         android:allowBackup="true"
         android:icon="@drawable/educacao"
         android:label="EducaNews"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/educacao"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".splash">
