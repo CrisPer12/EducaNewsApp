@@ -22,5 +22,8 @@ public class educaActivity extends AppCompatActivity {
         Intent educaMatIntent=new Intent(Intent.ACTION_VIEW,Uri.parse("https://educacao.uol.com.br/noticias/2019/04/02/falencia-de-grafica-inep-diz-que-cronograma-do-enem-2019-esta-mantido.htm"));
         startActivity(educaMatIntent);
     }
-
+    public void gaEdu(View view){
+        Intent gaEduIntent=new Intent(Intent.ACTION_VIEW,Uri.parse("https://educacao.uol.com.br/noticias/agencia-estado/2019/05/12/jogos-sao-mais-efetivos-na-avaliacao-do-que-as-provas-diz-jennifer-groff.htm"));
+        startActivity(gaEduIntent);
+    }
 }
