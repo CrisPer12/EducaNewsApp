@@ -1,7 +1,10 @@
 package com.example.crist.educanews;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -13,14 +16,25 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.content.DialogInterface;
+
+
 
 public class MainActivity extends AppCompatActivity
+
+
         implements NavigationView.OnNavigationItemSelectedListener {
+
+        private ImageView news;
+        static final int REQUEST_IMAGEM_CAPTURE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        news = (ImageView)findViewById(R.id.news);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -74,15 +88,15 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_educ) {
             {
-               Intent educaActivity = new Intent(this, educaActivity.class);
-               startActivity(educaActivity);
+                Intent educaActivity = new Intent(this, educaActivity.class);
+                startActivity(educaActivity);
             }
         } else if (id == R.id.nav_game) {
-            Intent gameAcitvity = new Intent(this,gameActivity.class);
+            Intent gameAcitvity = new Intent(this, gameActivity.class);
             startActivity(gameAcitvity);
 
         } else if (id == R.id.nav_soft) {
-            Intent infoAcitvity = new Intent(this,infoActivity.class);
+            Intent infoAcitvity = new Intent(this, infoActivity.class);
             startActivity(infoAcitvity);
         }
 
@@ -90,4 +104,28 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+    public void fatec(View view){
+        Intent fatecIntent=new Intent(Intent.ACTION_VIEW,Uri.parse("https://g1.globo.com/sp/itapetininga-regiao/noticia/2019/05/18/estudantes-da-fatec-criam-aplicativo-que-calcula-dosagem-de-remedios-para-evitar-erros-na-area-da-saude.ghtml"));
+        startActivity(fatecIntent);
+    }
+    public void solicitarFoto(View view){
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getPackageManager())!=null){
+            startActivityForResult(takePictureIntent,REQUEST_IMAGEM_CAPTURE);
+        }
+
+    }
+    public void publish (View view){
+        Intent intent = new Intent(this, succesPublish.class);
+        startActivity(intent);
+    }
+    @Override
+    protected void onActivityResult (int requestCode, int resultCode, Intent data){
+        if (requestCode == REQUEST_IMAGEM_CAPTURE && resultCode == RESULT_OK){
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            news.setImageBitmap(imageBitmap);
+        }
+    }
+
 }
